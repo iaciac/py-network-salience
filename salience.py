@@ -30,6 +30,7 @@ def SPT(G, r, weight='weight'):
         weight: string (default='weight')
             Key for edge data used as the edge weight w_ij.
             The weight is used to compute the effective proximity d_ij = 1/_wij.
+            WARNING: give the definition above, the weight value has to be a nonzero.
              
         Returns
         -------
