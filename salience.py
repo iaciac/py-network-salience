@@ -52,7 +52,7 @@ def SPT(G, r, weight='weight'):
     
     #Add the 'proximity' weight to each link (1/w) - WARNING: w has to be not zero!
     for i,j in G.edges():
-        w = G[i][j]['weight']
+        w = G[i][j][weight]
         G[i][j]['proximity'] = 1./w
     
     paths=nx.shortest_path(G,source=r, weight='proximity')
