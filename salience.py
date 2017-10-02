@@ -14,6 +14,8 @@
 
 
 import networkx as nx
+from networkx.utils import accumulate
+from networkx.utils import not_implemented_for
 import numpy as np
 
 __all__ = ['salience']
