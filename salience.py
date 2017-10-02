@@ -16,7 +16,11 @@
 import networkx as nx
 import numpy as np
 
-def SPT(G, r, weight='weight'):
+__all__ = ['salience']
+
+@not_implemented_for('directed')
+@not_implemented_for('multigraph')
+def _SPT(G, r, weight='weight'):
     """Returns the shortest-path tree (SPT) T(r) for a fixed reference node r of the graph G (see [1]).
         
         Args
@@ -92,7 +96,7 @@ def salience(G,weight='weight'):
     N = G.order()
     S = np.zeros((N,N))
     for n in G.nodes():
-        S = S + SPT(G,n,weight=weight)
+        S = S + _SPT(G,n,weight=weight)
     S = 1.*S/N
     return S    
 
